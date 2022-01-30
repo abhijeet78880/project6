@@ -1,0 +1,126 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    overflow: hidden;
+    font-family: 'VT323', monospace;
+}
+.StartModal{
+    background-image: url(../img/bg/modi1.jpg);
+    height:100vh;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1000;
+    background-size: cover; 
+    text-align: center;
+}
+.StartModal h1{
+    margin-top: 10vh;
+    font-size: 20vh;
+    padding: 10vh;
+    color: rgb(107, 207, 0);
+    text-shadow: 2px 2px rgb(0, 0, 0);
+}
+.StartModal .stbtn{
+    font-size: 40px;
+    padding: 20px;
+    border-radius: 40px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.616);
+}
+.game{
+    height:100vh;
+    width: 100%;
+    overflow: hidden;
+    background-image: url(img/bg/night\ forest.jpg);
+    background-size: cover;
+}
+.score{
+    color: white;
+    font-size: 15px;
+    font-family: 'VT323', monospace;
+    padding: 10px;
+}
+.immune{
+    color: white;
+    font-size: 23px;
+    padding-left: 10px;
+    font-weight: 600;
+}
+.hscore{
+    color: white;
+    font-size: 17px;
+    font-family: 'VT323', monospace;
+    padding: 10px;
+}
+.info{
+    display: flex;
+    justify-content: space-between;
+}
+.player{
+    color: red;
+    font-size: 20px;
+    height: 150px;
+    width: 100px;
+    position: absolute;
+    bottom: 40px;
+}
+.player img{
+    height: 150px;
+    width: 100px;
+}
+.enemy{
+    height: 100px;
+    width: 70px;
+    position: absolute;
+    bottom: 40px;
+}
+.enemy img{
+    height: 100px;
+    width: 70px;
+}
+.enemyRun{
+    animation: go 5s linear infinite;
+}
+.jump{
+    animation: jump 0.6s linear;
+}
+
+@keyframes jump {
+   0%{
+       bottom: 0;
+   }
+   50%{
+       bottom: 400px;
+   }
+   100%{
+       bottom: 0;
+   }
+}
+@keyframes go {
+   from{
+       left: 100vw;
+   }
+   to{
+       left: -100vw;
+   }
+}
+.vaccinep{
+    color: red;
+    font-size: 20px;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    bottom: 410px;
+    left: 50vw;  
+}
+.weapon{
+    color: red;
+    font-size: 20px;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    bottom: 410px;
+    left: 30vw; 
+}

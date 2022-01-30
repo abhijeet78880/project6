@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genunine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/lv1.css">
+    <script src="../js/lv1.js"></script>
+</head>
+
+<body>
+    <div class="StartModal">
+        <h1>Modi vs Corona</h1>
+        <button class="stbtn" onclick="startGame()">PLAY</button>
+    </div>
+    
+
+
+    <div class="game">
+        <!-- .............info bar............... -->
+        <div class="info">
+            <div class="compete">
+                <div class="score">
+                    <h1 class="scoreH"> SCORE: 0 </h1>
+                </div>
+                <div class="immune">
+                    IMMUNE: 0
+                </div>
+                <div class="hscore">HEIGH SCORE: 0</div>
+                <script>
+                    document.querySelector(".hscore").innerText = "HIGH SCORE: " + localStorage.getItem("heighScore")
+                </script>
+            </div>
+
+            <div class="mission">
+                <h1>Vaccine</h1>
+                <p>get two vaccine to win</p>
+            </div>
+
+            <div class="weaponBox">
+                <div>
+                    <img src="../img/elements/fist.jpg" alt="Weapon"  class="wimg" >
+                </div>
+            </div>
+        </div>
+
+        <!-- ...........audios...... -->
+        <audio src="../audio//bgm.mp3" class="bgm1" loop></audio>
+        <audio class="hulkAngry" src="../audio//u_make_hulk_angry.mp3" style="display: none;"></audio>
+        <audio src="../audio//hulk_jump.mp3" class="hulkJump"></audio>
+        <audio src="../audio//enemy_1.wav" class="enemyL1"></audio>
+        <audio src="../audio//dhulk_sound_2.mp3" class="dhulk"></audio>
+
+        <!-- ...........Elements........ -->
+        <div class="vaccinep"><img src="../img/elements/vaccine.gif" alt=""></div>
+        <div class="weapon"><img src="../img/elements/gun1.png" alt=""></div>
+        <div class="player"><img src="../img/char/modistand.gif" alt="hulk" class="hulk"></div>
+        <div class="enemy"><img src="../img/char/bacteria_run_1.png" alt="virus" class="virus"></div>
+    </div>
+
+</body>
+
+</html>
