@@ -6,64 +6,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genunine</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <script src="script.js"></script>
 </head>
 
 <body>
-    <div class="StartModal">
-        <h1>Modi vs Corona</h1>
-        <a href="html/lv1.html" class="stbtn"> START </a>
-    </div>
-    
-
-
-    <div class="game">
-        <!-- .............info bar............... -->
-        <div class="info">
-            <div class="compete">
-                <div class="score">
-                    <h1 class="scoreH"> SCORE: 0 </h1>
+    <!-- .........home......... -->
+    <div class="home">
+        <div class="utilityTop">
+            <div class="donate"><a href="html/donate.html" style="padding:10px">Donate</a></div>
+            <div class="clearLocal"><button class="clear" onclick="clearLocal()"><img src="img/elements/bin.png" alt="clear"></button></div>
+            <script>
+                function clearLocal(){
+                   let flag = confirm("Do you want to reset the game(score,lv)");
+                   if(flag == true){
+                       localStorage.clear();
+                   }
+                }
+            </script>
+            <div class="playerInfo">
+                <div class="name">
+                    <span class="playername" style="font-weight: 600;">player</span>
+                    <span class="rename">
+                        <button id="renamebtn" style="font-family:serif;" onclick="updateName()">rename</button>
+                        <script>
+                            let name;
+                            let pname = localStorage.getItem("playerName");
+                            let playerName = document.querySelector('.playername');
+                            playerName.innerText= pname;
+                            if(pname === null){
+                                updateName();
+                            }
+                            function updateName(){
+                                name = prompt("give a username");
+                               saveName(name);
+                            }
+                            function saveName(name){
+                                let SavedName = localStorage.setItem("playerName", name);
+                                playerName.innerText= localStorage.getItem("playerName");
+                            }
+                        </script>
+                    </span>
                 </div>
-                <div class="immune">
-                    IMMUNE: 0
-                </div>
-                <div class="hscore">HEIGH SCORE: 0</div>
+                <div class="hscore" style="font-weight: 600;">HIGH SCORE</div>
                 <script>
-                    document.querySelector(".hscore").innerText = "HIGH SCORE: " + localStorage.getItem("heighScore")
+                    document.querySelector(".hscore").innerText = "High Score: " + localStorage.getItem("heighScore")
                 </script>
             </div>
-
-            <div class="mission">
-                <h1>Vaccine</h1>
-                <p>get two vaccine to win</p>
-            </div>
-
-            <div class="weaponBox">
-                <div>
-                    <img src="" alt="Weapon"  class="wimg" >
-                </div>
-            </div>
-
         </div>
-
-        <!-- ...........audios...... -->
-        <audio src="audio/bgm.mp3" class="bgm1" loop></audio>
-        <audio class="hulkAngry" src="audio/u_make_hulk_angry.mp3" style="display: none;"></audio>
-        <audio src="audio/hulk_jump.mp3" class="hulkJump"></audio>
-        <audio src="audio/enemy_1.wav" class="enemyL1"></audio>
-        <audio src="audio/dhulk_sound_2.mp3" class="dhulk"></audio>
-
-        <!-- ...........Elements........ -->
-        <div class="vaccinep">vaccine</div>
-        <div class="weapon">Weapon</div>
-        <div class="player"><img src="img/char/ghulkrun1.gif" alt="hulk" class="hulk"></div>
-        <div class="enemy"><img src="img/char/bacteria_run_1.png" alt="virus" class="virus"></div>
+        <div class="utilityBottom">
+            <div class="utbtn">
+                <div class="controlbtn"><button><a href="html/control.html"><img src="img/elements/control.png" alt="control"></a></button></div>
+                <div class="startbtn"><button><a href="html/lv1.html"><img src="img/elements/start.png" alt="start"></a></button></div>
+            <div class="levelbtn"><button><a href="html/level.html"><img src="img/elements/level.png" alt="level"></a></button></div>
+            </div>
+        </div>
     </div>
-
 </body>
 
 </html>

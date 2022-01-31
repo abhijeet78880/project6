@@ -1,0 +1,81 @@
+*{
+    margin:0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+.container{
+    background-image: url(../img/bg/bgstart.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.backdrop{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100vw;
+    backdrop-filter: blur(5px);
+}
+.info{
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:transparent;
+}
+.levelContainer{
+    height: 60vh;
+    background-color:transparent;
+}
+.levelContainer .levbtn{
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.levelContainer .levbtn .lev{
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: orange;
+    border-radius: 15%;
+    border-color: orange;
+    opacity: 0.3;
+}
+.levelContainer .levbtn .lev h1{
+    font-size: 30px;
+}
+.levelContainer .uplevbtn{
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.levelContainer .lowlevbtn{
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.navbtn{
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+}
+.navbtn button{
+    margin: 20px;
+    padding: 20px;
+    background-color: rgb(150, 216, 45);
+    border-radius: 15%;
+    border-color: rgb(150, 216, 45);
+}
+@media all and (max-width: 1300px) {
+    .levelContainer .levbtn .lev{
+        padding: 20px;
+        background-color: orange;
+        border-radius: 15%;
+        border-color: orange;
+        opacity: 0.3;
+    }
+ }
+ 

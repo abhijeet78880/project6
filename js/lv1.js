@@ -9,6 +9,9 @@ function updateImmune(vaccineCount) {
 function saveGame(HscoreCount) {
     localStorage.setItem("heighScore", HscoreCount);
 }
+function updatewin(lev){
+    localStorage.setItem("levelpassed" , lev)
+}
 function updateVaccine() {
     setTimeout(() => {
         document.querySelector(".vaccinep").style.display = 'block'
@@ -21,6 +24,7 @@ let vaccineCount = 0;
 let cross = true;
 let point = true;
 let weapon = 0;
+let lev = 0;
 let HeighScore = localStorage.getItem("heighScore");
 
 // startGame
@@ -127,6 +131,11 @@ function startGame() {
                 weaponBox.src = "../img/elements/fist.jpg";
             },7000)
             upDateWepon();
+        }
+        //winGame
+        if(vaccineCount >= 2){
+            lev = 1;
+            updatewin(lev);
         }
         //gameOver
         if (dx < 100 && dy < 100 && vaccineCount < 0) {

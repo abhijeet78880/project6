@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Levels</title>
+    <link rel="stylesheet" href="../css/level.css">
+</head>
+<body><div class="container">
+    <div class="backdrop">
+        <div class="info">
+            <div class="levinfo"><h1 style="color: white;">STAGE 1</h1></div>
+        </div>
+        <div class="levelContainer">
+            <div class="levbtn">
+                <div class="uplevbtn">
+                <button class="lev" ><h1><a href="../html/lv1.html">1</a></h1></button>
+                <button class="lev" ><h1>2</h1></button>
+                <button class="lev" ><h1>3</h1></button>
+                <button class="lev" ><h1>4</h1></button>
+                <button class="lev" ><h1>5</h1></button>
+                </div>
+                <div class="lowlevbtn">
+                <button class="lev" ><h1>6</h1></button>
+                <button class="lev" ><h1>7</h1></button>
+                <button class="lev" ><h1>8</h1></button>
+                <button class="lev" ><h1>9</h1></button>
+                <button class="lev" ><h1>10</h1></button>
+                </div>
+                <script>
+                    let levelpassed = localStorage.getItem("levelpassed");
+                    console.log(levelpassed)
+                    lev = document.getElementsByClassName("lev");
+                    for(i=0; i<=levelpassed; i++){
+                        let j = i+1;
+                        lev[i].style.opacity = "1";
+                        lev[i].innerHTML = `<h1><a href="../html/lv`+j+`.html">`+j+`</a></h1>`;
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="navbtn">
+            <div class="back"><button><a href="../index.html">back</a></button></div>
+            <div class="next"><button>next</button></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
