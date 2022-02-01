@@ -65,6 +65,7 @@
     height: fit-content;
     width: 200px;
     margin: 20px;
+    color: white;
 }
 .info .weaponBox{
     text-align: center;
@@ -87,10 +88,10 @@
     background: transparent;
     border: transparent;
     border-radius: 20%;
-    height: 40px;
+    height: 60px;
     display: none;
 }.leftkeys button img , .rightkeys button img{
-    height: 40px;
+    height: 60px;
     display: none;
 }
 .player{
@@ -214,6 +215,10 @@ flex-direction: column;
     }
     .leftkeys button , .rightkeys button ,.leftkeys button img , .rightkeys button img{
         display: block;
+    }
+    .leftkeys button , .rightkeys button{
+        margin-top: 15px;
+        margin-left: 10px;
     }
     .keys{
         display: flex;
