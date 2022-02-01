@@ -33,6 +33,13 @@
                             let pname = localStorage.getItem("playerName");
                             let playerName = document.querySelector('.playername');
                             playerName.innerText= pname;
+                            var current_mode = screen.orientation;
+                            if(current_mode.type == "portrait"){
+                                alert("rorate your phone");
+                            }
+                            else{
+                                screen.orientation.lock("landscape")
+                            }
                             if(pname === null){
                                 updateName();
                             }
@@ -44,20 +51,6 @@
                                 let SavedName = localStorage.setItem("playerName", name);
                                 playerName.innerText= localStorage.getItem("playerName");
                             }
-                            var current_mode = screen.orientation;
-                            screen.orientation.lock("landscape-primary")
-	                        .then(()=> {
-		                    alert('landscape mode');
-	                        })
-	                        .catch(function(error) {
-		                    console.log(error);
-	                        });
-
-// type
-console.log(current_mode.type)
-
-// angle
-console.log(current_mode.angle)
                         </script>
                     </span>
                 </div>
