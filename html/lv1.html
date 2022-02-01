@@ -13,7 +13,7 @@
 <body>
     
     <div class="StartModal">
-        <button class="stbtn" onclick="startGame()">PLAY</button>
+        <button class="stbtn" onclick="startGamelate()">PLAY</button>
     </div>
     
     <div class="game">
@@ -43,7 +43,18 @@
                 </div>
             </div>
         </div>
-           
+           <div class="startload">
+               <h1>
+                   loading
+               </h1>
+               <style>
+                   .startload{
+                       width: 100%;
+                       text-align: center;
+                       animation: blink 3s linear;
+                   }
+               </style>
+           </div>
         <!-- ...........audios...... -->
         <audio src="../audio//bgm.mp3" class="bgm1" loop></audio>
         <audio class="hulkAngry" src="../audio//u_make_hulk_angry.mp3" style="display: none;"></audio>

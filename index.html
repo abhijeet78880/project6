@@ -41,7 +41,10 @@
                             var current_mode = screen.orientation;
                             console.log(current_mode)
                             if(current_mode.type == "portrait-primary"){
-                                alert("rorate your phone");
+                                let full = confirm("rorate your phone");
+                                if(full){
+                                    document.querySelector('.home').requestFullscreen();
+                                }
                             }
                             else{
                                 screen.orientation.lock("landscape")

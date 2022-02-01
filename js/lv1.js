@@ -1,3 +1,10 @@
+function startGamelate(){
+    document.querySelector('.StartModal').style.display = "none";
+    document.querySelector(".game").requestFullscreen();
+    setTimeout(()=>{
+        startGame();
+    },4000)
+}
 
 // global variables
 let scoreCount = 0;
@@ -40,9 +47,7 @@ function jumpbtn(){
 function startGame() {
 
 // startGame
-    document.querySelector('.StartModal').style.display = "none";
-    document.querySelector(".game").requestFullscreen()
-
+document.querySelector('.startload').style.display = "none";
     bgm1 = document.querySelector(".bgm1");
     bgm1.play();
 
@@ -174,8 +179,8 @@ function startGame() {
             </div>`;
             }
             
-            dhulk1.play();
             hulkimg.src = "../img/char/modidie.gif";
+            dhulk1.play();
             enemy.classList.remove("enemyRun");
             weapon1.style.display = "none";
             vaccine.style.display = "none";
