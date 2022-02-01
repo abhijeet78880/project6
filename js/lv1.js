@@ -1,51 +1,3 @@
-// buttons
-function firebtn(){
-    if (weapon == 1){
-        hulkimg.src = "../img/char/modiFire.gif";
-        document.querySelector(".enemy").style.display="none";
-        setTimeout(() => {
-        player.classList.remove('jump')
-        hulkimg.src = "../img/char/modistand.gif";
-    }, 900);
-    }
-};
-function rightbtn(){
-    
-    player.style.left = (playerX + 30) + "px";
-    hulkimg.src = "../img/char/modirunFinal.gif";
-};
-function leftbtn(){
-    player.style.left = (playerX - 30) + "px";
-    hulkimg.src = "../img/char/modirunLeft.gif";
-};
-function jumpbtn(){
-    player.classList.add('jump');
-    hulkimg.src = "../img/char/modiJump.gif";
-    hulkJump.play();
-    setTimeout(() => {
-        player.classList.remove('jump')
-        hulkimg.src = "../img/char/modistand.gif";
-    }, 500);
-};
-function updateScore(scoreCount) {
-    score = document.querySelector(".scoreH");
-    score.innerHTML = "SCORE: " + scoreCount
-}
-function updateImmune(vaccineCount) {
-    immune = document.querySelector(".immune");
-    immune.innerText = "IMMUNE :" + vaccineCount
-}
-function saveGame(HscoreCount) {
-    localStorage.setItem("heighScore", HscoreCount);
-}
-function updatewin(lev){
-    localStorage.setItem("levelpassed" , lev)
-}
-function updateVaccine() {
-    setTimeout(() => {
-        document.querySelector(".vaccinep").style.display = 'block'
-    }, 20000)
-}
 
 // global variables
 let scoreCount = 0;
@@ -55,9 +7,39 @@ let point = true;
 let weapon = 0;
 let lev = 0;
 let HeighScore = localStorage.getItem("heighScore");
+// buttons
+function firebtn(){
+    if (weapon == 1){
+        document.querySelector(".hulk").src = "../img/char/modiFire.gif";
+        document.querySelector(".enemy").style.display="none";
+        setTimeout(() => {
+        player.classList.remove('jump')
+        document.querySelector(".hulk").src = "../img/char/modistand.gif";
+    }, 900);
+    }
+};
+function rightbtn(){
+    
+    player.style.left = (playerX + 30) + "px";
+    document.querySelector(".hulk").src = "../img/char/modirunFinal.gif";
+};
+function leftbtn(){
+    player.style.left = (playerX - 30) + "px";
+    document.querySelector(".hulk").src = "../img/char/modirunLeft.gif";
+};
+function jumpbtn(){
+    player.classList.add('jump');
+    document.querySelector(".hulk").src = "../img/char/modiJump.gif";
+    document.querySelector(".hulkJump").play();
+    setTimeout(() => {
+        player.classList.remove('jump')
+        document.querySelector(".hulk").src = "../img/char/modistand.gif";
+    }, 500);
+};
+
+function startGame() {
 
 // startGame
-function startGame() {
     document.querySelector('.StartModal').style.display = "none";
     bgm1 = document.querySelector(".bgm1");
     bgm1.play();
@@ -227,4 +209,23 @@ function startGame() {
         }
     }, 100);
 
+}
+function updateScore(scoreCount) {
+    score = document.querySelector(".scoreH");
+    score.innerHTML = "SCORE: " + scoreCount
+}
+function updateImmune(vaccineCount) {
+    immune = document.querySelector(".immune");
+    immune.innerText = "IMMUNE :" + vaccineCount
+}
+function saveGame(HscoreCount) {
+    localStorage.setItem("heighScore", HscoreCount);
+}
+function updatewin(lev){
+    localStorage.setItem("levelpassed" , lev)
+}
+function updateVaccine() {
+    setTimeout(() => {
+        document.querySelector(".vaccinep").style.display = 'block'
+    }, 20000)
 }
