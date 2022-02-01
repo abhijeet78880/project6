@@ -10,6 +10,11 @@
 </head>
 
 <body>
+    <style>
+        .game{
+            transform: rotate(90%);
+        }
+    </style>
     <!-- .........home......... -->
     <div class="home">
         <div class="utilityTop">
@@ -34,7 +39,8 @@
                             let playerName = document.querySelector('.playername');
                             playerName.innerText= pname;
                             var current_mode = screen.orientation;
-                            if(current_mode.type == "portrait"){
+                            console.log(current_mode)
+                            if(current_mode.type == "portrait-primary"){
                                 alert("rorate your phone");
                             }
                             else{

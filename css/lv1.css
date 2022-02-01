@@ -256,22 +256,22 @@ flex-direction: column;
         width: 20px;  
     }
     .player {
-        height: 75px;
-        width: 50px;
+        height: 95px;
+        width: 70px;
         bottom: 10px;
     }
     .enemy{
-        height: 50px;
-        width: 35px;
+        height: 70px;
+        width: 55px;
         bottom: 10px;
     }
     .player img{
-        height:75px ;
-        width: 50px ;
+        height: 95px;
+        width: 70px;
     }
     .enemy img{
-        height: 50px;
-        width: 35px;
+        height: 70px;
+        width: 55px;
     }
     
 @keyframes jump {
