@@ -15,6 +15,7 @@
     text-align: center;
     background-color: rgba(0, 0, 0, 0.466);
     backdrop-filter: blur(20px);
+    /* display: none; */
 }
 .StartModal .stbtn{
     font-size: 40px;
@@ -23,6 +24,7 @@
     color: white;
     background-color: rgba(0, 0, 0, 0.616);
     margin-top: 50vh;
+    /* display: none; */
 }
 .game{
     height:100vh;
@@ -46,7 +48,6 @@
 .hscore{
     color: white;
     font-size: 17px;
-    font-family: 'VT323', monospace;
     padding: 10px;
 }
 .info{
@@ -82,10 +83,17 @@
     width: 100px;
     border-radius: 50px;
 }
-
+.leftkeys button , .rightkeys button{
+    background: transparent;
+    border: transparent;
+    border-radius: 20%;
+    height: 40px;
+    display: none;
+}.leftkeys button img , .rightkeys button img{
+    height: 40px;
+    display: none;
+}
 .player{
-    color: red;
-    font-size: 20px;
     height: 150px;
     width: 100px;
     position: absolute;
@@ -110,7 +118,7 @@
     animation: go 5s linear infinite;
 }
 .jump{
-    animation: jump 0.6s linear;
+    animation: jump 0.7s linear;
 }
 
 @keyframes jump {
@@ -133,8 +141,6 @@
    }
 }
 .vaccinep{
-    color: red;
-    font-size: 20px;
     height: 30px;
     width: 30px;
     position: absolute;
@@ -146,8 +152,6 @@
     width: 30px;  
 }
 .weapon{
-    color: red;
-    font-size: 20px;
     height: 30px;
     width: 30px;
     position: absolute;
@@ -161,6 +165,20 @@
 .end{
     font-size: 30px;
     animation: blink 1s linear infinite;
+}
+.restart{
+    background-color: rgba(255, 127, 80, 0.555);
+    border: 1px solid coral;
+    padding: 10px;
+    margin: 10px;
+    color : white;
+}
+a{
+    color: white;
+    background: rgba(125, 209, 0, 0.699);
+    padding: 10px;
+    position: relative;
+    z-index: 1000;
 }
 @keyframes blink {
     0%{
@@ -194,4 +212,77 @@ flex-direction: column;
         font-size: 12px;
         padding: 5px;
     }
+    .leftkeys button , .rightkeys button ,.leftkeys button img , .rightkeys button img{
+        display: block;
+    }
+    .keys{
+        display: flex;
+        justify-content: space-between;
+    }
+    .weapon , .weapon img{
+        height: 20px;
+        width: 20px;
+    }
+    .weapon{
+        bottom: 50vh;
+    }
+    .info .weaponBox{
+        width: 130px
+    }
+    .info .weaponBox div{
+        height: 50px;
+        width: 50px;
+        border-radius: 25px;
+        border-radius: 1px solid white;
+    }
+    .info .weaponBox div img{
+        height: 50px;
+        width: 50px;
+        border-radius: 25px;
+    }
+    .info .mission{
+        height: 110px;
+        width: fit-content;
+        margin: 10px;
+        font-size: 12px;
+    }
+    .vaccinep{
+        height: 20px;
+        width: 20px;
+        bottom: 50vh;
+    }
+    .vaccinep img{
+        height: 20px;
+        width: 20px;  
+    }
+    .player {
+        height: 75px;
+        width: 50px;
+        bottom: 10px;
+    }
+    .enemy{
+        height: 50px;
+        width: 35px;
+        bottom: 10px;
+    }
+    .player img{
+        height:75px ;
+        width: 50px ;
+    }
+    .enemy img{
+        height: 50px;
+        width: 35px;
+    }
+    
+@keyframes jump {
+    0%{
+        bottom: 0;
+    }
+    50%{
+        bottom: 50vh;
+    }
+    100%{
+        bottom: 0;
+    }
+ }
  }

@@ -1,3 +1,32 @@
+// buttons
+function firebtn(){
+    if (weapon == 1){
+        hulkimg.src = "../img/char/modiFire.gif";
+        document.querySelector(".enemy").style.display="none";
+        setTimeout(() => {
+        player.classList.remove('jump')
+        hulkimg.src = "../img/char/modistand.gif";
+    }, 900);
+    }
+};
+function rightbtn(){
+    
+    player.style.left = (playerX + 30) + "px";
+    hulkimg.src = "../img/char/modirunFinal.gif";
+};
+function leftbtn(){
+    player.style.left = (playerX - 30) + "px";
+    hulkimg.src = "../img/char/modirunLeft.gif";
+};
+function jumpbtn(){
+    player.classList.add('jump');
+    hulkimg.src = "../img/char/modiJump.gif";
+    hulkJump.play();
+    setTimeout(() => {
+        player.classList.remove('jump')
+        hulkimg.src = "../img/char/modistand.gif";
+    }, 500);
+};
 function updateScore(scoreCount) {
     score = document.querySelector(".scoreH");
     score.innerHTML = "SCORE: " + scoreCount
@@ -74,7 +103,6 @@ function startGame() {
             }, 900);
             }
         }
-
     }
     //game engine
     let gameInterval = setInterval(() => {
@@ -146,10 +174,24 @@ function startGame() {
             <button class="restart" onclick="location.reload()">
             restart
             </button>
-            <a href="../index.html">Home</a>
+            <a class=""restart href="../index.html">Home</a>
             </div>`;
+
+            if(lev == 1){
+                document.querySelector(".info").innerHTML = `<div class="navbtn">
+            <h1 class="end">
+            GAME OVER
+            </h1>
+            <button class="restart" onclick="location.reload()">
+            restart
+            </button>
+            <a class=""restart href="../index.html">Home</a>
+            <p style="color:white;position:relative;z-index:1000;">You have compeleted the mission</p>
+            </div>`;
+            }
             
             dhulk1.play();
+            hulkimg.src = "../img/char/modidie.gif";
             enemy.classList.remove("enemyRun");
             weapon1.style.display = "none";
             vaccine.style.display = "none";
