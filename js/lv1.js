@@ -41,6 +41,8 @@ function startGame() {
 
 // startGame
     document.querySelector('.StartModal').style.display = "none";
+    document.querySelector(".game").requestFullscreen()
+
     bgm1 = document.querySelector(".bgm1");
     bgm1.play();
 

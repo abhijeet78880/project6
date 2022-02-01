@@ -44,6 +44,20 @@
                                 let SavedName = localStorage.setItem("playerName", name);
                                 playerName.innerText= localStorage.getItem("playerName");
                             }
+                            var current_mode = screen.orientation;
+                            screen.orientation.lock("landscape-primary")
+	                        .then(()=> {
+		                    alert('landscape mode');
+	                        })
+	                        .catch(function(error) {
+		                    console.log(error);
+	                        });
+
+// type
+console.log(current_mode.type)
+
+// angle
+console.log(current_mode.angle)
                         </script>
                     </span>
                 </div>
