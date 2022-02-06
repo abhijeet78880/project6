@@ -1,0 +1,164 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.StartModal{
+    height:100vh;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1000;
+    background-size: cover; 
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.466);
+    backdrop-filter: blur(20px);
+    /* display: none; */
+}
+.StartModal .stbtn{
+    font-size: 40px;
+    padding: 20px;
+    border-radius: 40px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.616);
+    margin-top: 50vh;
+    /* display: none; */
+}
+.game{
+    height:100vh;
+    width: 100%;
+    overflow: hidden;
+    background-image: url(../img/bg/night\ forest.jpg);
+    background-size: cover;
+}
+.info{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.info .health{
+    text-align: left;
+    width: fit-content;
+    height: fit-content;
+}.info .health .pHealth , .eHealth{
+    border: 2px solid white;
+    border-radius: 2px;
+    height: 20px;
+    width: 200px;
+    margin: 20px;
+}
+.pHealthPoint , .eHealthPoint{
+    height: 20px;
+    width: 200px;
+    background-color: rgb(3, 252, 3);
+}
+#rHealth{
+    text-align: right;
+}
+.leftkeys button , .rightkeys button{
+    background: transparent;
+    border: transparent;
+    border-radius: 20%;
+    height: 60px;
+    display: none;
+}
+.playerName , .enemyName {
+    margin: 20px;
+    color: white;
+}
+.leftkeys button img , .rightkeys button img{
+    height: 60px;
+    display: none;
+}
+.player{
+    height: 150px;
+    width: 100px;
+    position: absolute;
+    bottom: 40px;
+}
+.player img{
+    height: 150px;
+    width: 100px;
+}
+.enemy{
+    height: 100px;
+    width: 70px;
+    position: absolute;
+    bottom: 40px;
+    left: 50vw;
+}
+.enemy img{
+    height: 100px;
+    width: 70px;
+}
+.enemyRun{
+    animation: go 5s linear infinite;
+}
+.jump{
+    animation: jump 0.7s linear;
+}
+
+@keyframes jump {
+   0%{
+       bottom: 0;
+   }
+   50%{
+       bottom: 400px;
+   }
+   100%{
+       bottom: 0;
+   }
+}
+@keyframes go {
+   from{
+       left: 100vw;
+   }
+   to{
+       left: -100vw;
+   }
+}
+@media all and (max-width: 1300px) {
+    .leftkeys button , .rightkeys button ,.leftkeys button img , .rightkeys button img{
+        display: block;
+    }
+    .leftkeys button , .rightkeys button{
+        margin-top: 15px;
+        margin-left: 10px;
+    }
+    .keys{
+        display: flex;
+        justify-content: space-between;
+    }
+    .player {
+        height: 95px;
+        width: 70px;
+        bottom: 10px;
+    }
+    .enemy{
+        height: 70px;
+        width: 55px;
+        bottom: 10px;
+    }
+    .player img{
+        height: 95px;
+        width: 70px;
+    }
+    .enemy img{
+        height: 70px;
+        width: 55px;
+    }
+    
+@keyframes jump {
+    0%{
+        bottom: 0;
+    }
+    50%{
+        bottom: 50vh;
+    }
+    100%{
+        bottom: 0;
+    }
+ }
+ }

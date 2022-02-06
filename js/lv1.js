@@ -17,30 +17,30 @@ let HeighScore = localStorage.getItem("heighScore");
 // buttons
 function firebtn(){
     if (weapon == 1){
-        document.querySelector(".hulk").src = "../img/char/modiFire.gif";
+        document.querySelector(".modi").src = "../img/char/modiFire.gif";
         document.querySelector(".enemy").style.display="none";
         setTimeout(() => {
         player.classList.remove('jump')
-        document.querySelector(".hulk").src = "../img/char/modistand.gif";
+        document.querySelector(".modi").src = "../img/char/modistand.gif";
     }, 900);
     }
 };
 function rightbtn(){
     
     player.style.left = (playerX + 30) + "px";
-    document.querySelector(".hulk").src = "../img/char/modirunFinal.gif";
+    document.querySelector(".modi").src = "../img/char/modirunFinal.gif";
 };
 function leftbtn(){
     player.style.left = (playerX - 30) + "px";
-    document.querySelector(".hulk").src = "../img/char/modirunLeft.gif";
+    document.querySelector(".modi").src = "../img/char/modirunLeft.gif";
 };
 function jumpbtn(){
     player.classList.add('jump');
-    document.querySelector(".hulk").src = "../img/char/modiJump.gif";
-    document.querySelector(".hulkJump").play();
+    document.querySelector(".modi").src = "../img/char/modiJump.gif";
+    document.querySelector(".modiJump").play();
     setTimeout(() => {
         player.classList.remove('jump')
-        document.querySelector(".hulk").src = "../img/char/modistand.gif";
+        document.querySelector(".modi").src = "../img/char/modistand.gif";
     }, 500);
 };
 
@@ -56,39 +56,39 @@ document.querySelector('.startload').style.display = "none";
     // keydown events
     document.onkeydown = function keyEve(e) {
         player = document.querySelector('.player');
-        hulkimg = document.querySelector(".hulk");
+        modiimg = document.querySelector(".modi");
         // audio
-        hulkAngry = document.querySelector(".hulkAngry")
-        hulkJump = document.querySelector(".hulkJump")
-        dhulk1 = document.querySelector(".dhulk")
+        modiAngry = document.querySelector(".modiAngry")
+        modiJump = document.querySelector(".modiJump")
+        dmodi1 = document.querySelector(".dmodi")
         enemyL1 = document.querySelector(".enemyL1")
 
 
         playerX = parseInt(window.getComputedStyle(player, null).getPropertyValue('left'));
         if (e.keyCode == 38 || e.keyCode == 32) {
             player.classList.add('jump');
-            hulkimg.src = "../img/char/modiJump.gif";
-            hulkJump.play();
+            modiimg.src = "../img/char/modiJump.gif";
+            modiJump.play();
             setTimeout(() => {
                 player.classList.remove('jump')
-                hulkimg.src = "../img/char/modistand.gif";
+                modiimg.src = "../img/char/modistand.gif";
             }, 500);
         };
         if (e.keyCode == 39) {
-            hulkimg.src = "../img/char/modirunFinal.gif";
+            modiimg.src = "../img/char/modirunFinal.gif";
             player.style.left = (playerX + 30) + "px";
         }
         if (e.keyCode == 37) {
-            hulkimg.src = "../img/char/modirunLeft.gif";
+            modiimg.src = "../img/char/modirunLeft.gif";
             player.style.left = (playerX - 30) + "px";
         };
         if (e.keyCode == 70) {
             if (weapon == 1){
-                hulkimg.src = "../img/char/modiFire.gif";
+                modiimg.src = "../img/char/modiFire.gif";
                 document.querySelector(".enemy").style.display="none";
                 setTimeout(() => {
                 player.classList.remove('jump')
-                hulkimg.src = "../img/char/modistand.gif";
+                modiimg.src = "../img/char/modistand.gif";
             }, 900);
             }
         }
@@ -96,7 +96,7 @@ document.querySelector('.startload').style.display = "none";
     //game engine
     let gameInterval = setInterval(() => {
         //graphics
-        hulkimg = document.querySelector(".hulk");
+        modiimg = document.querySelector(".modi");
         weaponBox = document.querySelector(".wimg");
         vaccineBox = document.querySelector(".vaccinep");
         arm = document.querySelector(".weapon");
@@ -179,8 +179,8 @@ document.querySelector('.startload').style.display = "none";
             </div>`;
             }
             
-            hulkimg.src = "../img/char/modidie.gif";
-            dhulk1.play();
+            modiimg.src = "../img/char/modidie.gif";
+            dmodi1.play();
             enemy.classList.remove("enemyRun");
             weapon1.style.display = "none";
             vaccine.style.display = "none";
